@@ -1,0 +1,39 @@
+<hr>
+<p>title: Git常用操作合集<br>data: 2020/05/06<br>categories: 工具操作<br>tags:<br>    - 工具操作<br>    - 版本管理</p>
+<hr>
+<h1 id="Git常用操作"><a href="#Git常用操作" class="headerlink" title="Git常用操作"></a>Git常用操作</h1><h2 id="查看当前分支："><a href="#查看当前分支：" class="headerlink" title="查看当前分支："></a>查看当前分支：</h2><pre><code class="shell">git branch
+</code></pre>
+<h2 id="查看远程分支："><a href="#查看远程分支：" class="headerlink" title="查看远程分支："></a>查看远程分支：</h2><pre><code class="shell">git branch -a
+</code></pre>
+<h2 id="更新本地分支："><a href="#更新本地分支：" class="headerlink" title="更新本地分支："></a>更新本地分支：</h2><pre><code class="shell">git remote update origin --prune
+git fetch origin --prune    git branch -a
+</code></pre>
+<h2 id="切换本地分支（若分支在本地未与orgin同步）："><a href="#切换本地分支（若分支在本地未与orgin同步）：" class="headerlink" title="切换本地分支（若分支在本地未与orgin同步）："></a>切换本地分支（若分支在本地未与orgin同步）：</h2><pre><code class="shell">git checkout -b [branch name]
+</code></pre>
+<h2 id="删除远程分支："><a href="#删除远程分支：" class="headerlink" title="删除远程分支："></a>删除远程分支：</h2><pre><code class="shell">git push origin --delete [branch name]
+</code></pre>
+<h2 id="删除本地分支（dev分支）："><a href="#删除本地分支（dev分支）：" class="headerlink" title="删除本地分支（dev分支）："></a>删除本地分支（dev分支）：</h2><pre><code class="shell">git branch -D dev
+</code></pre>
+<h2 id="拉取代码（拉取指定分支）："><a href="#拉取代码（拉取指定分支）：" class="headerlink" title="拉取代码（拉取指定分支）："></a>拉取代码（拉取指定分支）：</h2><pre><code class="shell">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
+</code></pre>
+<h2 id="拉取代码（与当前分支合并）"><a href="#拉取代码（与当前分支合并）" class="headerlink" title="拉取代码（与当前分支合并）:"></a>拉取代码（与当前分支合并）:</h2><pre><code class="shell">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;
+</code></pre>
+<h2 id="手动合并（打开merge工具）-："><a href="#手动合并（打开merge工具）-：" class="headerlink" title="手动合并（打开merge工具）  ："></a>手动合并（打开merge工具）  ：</h2><pre><code class="shell">git merge tool 
+# 打开beyondcompare后左边是当前分支代码，中间是修改前的代码，右边是被合并分支的代码，点击左边箭头进行选择并合并
+</code></pre>
+<p>![image-20210213140815332](C:\Users\张雁君\Documents\NetSarang Computer\6\Xftp\Temporary\Git常用操作合集\image-20210213140815332.png)</p>
+<p>删除远端文件（保留本地文件）:</p>
+<p>文件: git rm –cache filename</p>
+<p>文件夹: git rm -r –cache dirname</p>
+<p>创建和删除标签：</p>
+<p>创建：git tag &lt;标签名&gt;</p>
+<p>git push origin &lt;标签名&gt;</p>
+<p>删除：git tag -d &lt;标签名&gt;</p>
+<p>git push origin :refs/tags/标签名</p>
+<p><a href="https://blog.csdn.net/u010324331/article/details/89638643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">https://blog.csdn.net/u010324331/article/details/89638643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<p>将tag检出的办法：git checkout -b <new branch> <tag name></p>
+<p>迁移仓库（从github到gitee)</p>
+<p><a href="https://blog.csdn.net/qq598535550/article/details/87870931">https://blog.csdn.net/qq598535550/article/details/87870931</a></p>
+<p>git remote remove origin</p>
+<p>git remote add origin <a href="https://gitee/com/Ztt./homework.git">https://gitee/com/Ztt./homework.git</a></p>
+<p>git push -u origin master</p>
