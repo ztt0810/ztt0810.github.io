@@ -89,6 +89,33 @@
     </entry>
     
     
+    
+    <entry>
+      <title>python项目打包</title>
+      <link href="2020/04/20/tool_operation/python_pack/"/>
+      <url>2020/04/20/tool_operation/python_pack/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python项目打包，使用pip安装"><a href="#python项目打包，使用pip安装" class="headerlink" title="python项目打包，使用pip安装"></a>python项目打包，使用pip安装</h1><h2 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h2><p>库发布前先确认你的库是以下这个结构的.<br>project 是最外层的库名<br>package1 是里面的包名<br>module.py 是具体的模块.<br><code>setup.py</code> 和<code>__init__.py</code> 是必须包含的,下面会讲解</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">    ┝━ setup.py</span><br><span class="line">    ┝━ package1</span><br><span class="line">    │   ┝ __init__.py</span><br><span class="line">    │   ┝ module1.py</span><br><span class="line">    │   └ module2.py</span><br><span class="line">    └─ package2</span><br><span class="line">        ┝ __init__.py</span><br><span class="line">        ┝ module3.py</span><br><span class="line">        └ module4.py</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>下面以model.py作为例子</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="comment"># module.py 常用模块</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    print(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    hello()</span><br></pre></td></tr></table></figure><p><strong>setup.py</strong>是必须的，且应该放在项目根目录中，里面的name，version，author，author_email等都是可以自定义的，name决定了你打包完后安装的名字，install_requires在安装时python会自动帮你检查是否有相应的依赖库</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> setuptools</span><br><span class="line"></span><br><span class="line">setuptools.setup(</span><br><span class="line">    name=<span class="string">&#x27;agentio&#x27;</span>, <span class="comment"># Replace with your own username</span></span><br><span class="line">    version=<span class="string">&quot;1.1.4&quot;</span>,</span><br><span class="line">    author=<span class="string">&quot;xxx&quot;</span>,</span><br><span class="line">    author_email=<span class="string">&quot;xxxx@xx.com&quot;</span>,</span><br><span class="line">    description=<span class="string">&quot;it is a demo&quot;</span>,</span><br><span class="line">    license=<span class="string">&#x27;MIT&#x27;</span>,</span><br><span class="line">    url=<span class="string">&quot;http://xxx.demo.com&quot;</span>,</span><br><span class="line">    packages=setuptools.find_packages(),</span><br><span class="line">    install_requires=[<span class="string">&#x27;pika&#x27;</span>],</span><br><span class="line">    classifiers=[</span><br><span class="line">        <span class="string">&quot;Programming Language == Python == 3&quot;</span>,</span><br><span class="line">        <span class="string">&quot;License == OSI Approved == MIT License&quot;</span>,</span><br><span class="line">        <span class="string">&quot;Operating System == OS Independent&quot;</span>,</span><br><span class="line">    ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="构建库"><a href="#构建库" class="headerlink" title="构建库"></a>构建库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py build</span><br></pre></td></tr></table></figure><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py sdist</span><br></pre></td></tr></table></figure><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install</span><br></pre></td></tr></table></figure><p>接着就可以正常使用啦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具操作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具操作 </tag>
+            
+            <tag> python基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
