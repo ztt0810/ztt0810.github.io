@@ -35,33 +35,6 @@
     
     
     <entry>
-      <title>Git常用操作合集</title>
-      <link href="2021/02/13/tool_operation/git/"/>
-      <url>2021/02/13/tool_operation/git/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Git常用操作"><a href="#Git常用操作" class="headerlink" title="Git常用操作"></a>Git常用操作</h1><h2 id="查看当前分支："><a href="#查看当前分支：" class="headerlink" title="查看当前分支："></a>查看当前分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure><h2 id="查看远程分支："><a href="#查看远程分支：" class="headerlink" title="查看远程分支："></a>查看远程分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure><h2 id="更新本地分支："><a href="#更新本地分支：" class="headerlink" title="更新本地分支："></a>更新本地分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote update origin --prune</span><br><span class="line">git fetch origin --prune    git branch -a</span><br></pre></td></tr></table></figure><h2 id="切换本地分支（若分支在本地未与orgin同步）："><a href="#切换本地分支（若分支在本地未与orgin同步）：" class="headerlink" title="切换本地分支（若分支在本地未与orgin同步）："></a>切换本地分支（若分支在本地未与orgin同步）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b [branch name]</span><br></pre></td></tr></table></figure><h2 id="删除远程分支："><a href="#删除远程分支：" class="headerlink" title="删除远程分支："></a>删除远程分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete [branch name]</span><br></pre></td></tr></table></figure><h2 id="删除本地分支（dev分支）："><a href="#删除本地分支（dev分支）：" class="headerlink" title="删除本地分支（dev分支）："></a>删除本地分支（dev分支）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D dev</span><br></pre></td></tr></table></figure><h2 id="拉取代码（拉取指定分支）："><a href="#拉取代码（拉取指定分支）：" class="headerlink" title="拉取代码（拉取指定分支）："></a>拉取代码（拉取指定分支）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure><h2 id="拉取代码（与当前分支合并）"><a href="#拉取代码（与当前分支合并）" class="headerlink" title="拉取代码（与当前分支合并）:"></a>拉取代码（与当前分支合并）:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;</span><br></pre></td></tr></table></figure><h2 id="手动合并（打开merge工具）-："><a href="#手动合并（打开merge工具）-：" class="headerlink" title="手动合并（打开merge工具）  ："></a>手动合并（打开merge工具）  ：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge tool </span><br><span class="line"><span class="meta">#</span><span class="bash"> 打开beyondcompare后左边是当前分支代码，中间是修改前的代码，右边是被合并分支的代码，点击左边箭头进行选择并合并</span></span><br></pre></td></tr></table></figure><p><img src="/2021/02/13/tool_operation/git/clipboard.png" alt="img"></p><p><img src="/2021/02/13/tool_operation/git/category.jpg" alt="category"></p><p>删除远端文件（保留本地文件）:</p><p>文件: git rm –cache filename</p><p>文件夹: git rm -r –cache dirname</p><p>创建和删除标签：</p><p>创建：git tag &lt;标签名&gt;</p><p>git push origin &lt;标签名&gt;</p><p>删除：git tag -d &lt;标签名&gt;</p><p>git push origin :refs/tags/标签名</p><p><a href="https://blog.csdn.net/u010324331/article/details/89638643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task">https://blog.csdn.net/u010324331/article/details/89638643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p><p>将tag检出的办法：git checkout -b <new branch> <tag name></tag></new></p><p>迁移仓库（从github到gitee)</p><p><a href="https://blog.csdn.net/qq598535550/article/details/87870931">https://blog.csdn.net/qq598535550/article/details/87870931</a></p><p>git remote remove origin</p><p>git remote add origin <a href="https://gitee/com/Ztt./homework.git">https://gitee/com/Ztt./homework.git</a></p><p>git push -u origin master</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 工具操作 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 工具操作 </tag>
-            
-            <tag> 版本管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据增强</title>
       <link href="2021/02/12/cv/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E4%B8%8E%E8%AE%AD%E7%BB%83trick/"/>
       <url>2021/02/12/cv/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E4%B8%8E%E8%AE%AD%E7%BB%83trick/</url>
@@ -83,6 +56,33 @@
             <tag> Deep Learning </tag>
             
             <tag> Data Augmentation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git常用操作合集</title>
+      <link href="2020/05/08/tool_operation/git/"/>
+      <url>2020/05/08/tool_operation/git/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Git常用操作"><a href="#Git常用操作" class="headerlink" title="Git常用操作"></a>Git常用操作</h1><h2 id="查看当前分支："><a href="#查看当前分支：" class="headerlink" title="查看当前分支："></a>查看当前分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure><h2 id="查看远程分支："><a href="#查看远程分支：" class="headerlink" title="查看远程分支："></a>查看远程分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure><h2 id="更新本地分支："><a href="#更新本地分支：" class="headerlink" title="更新本地分支："></a>更新本地分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote update origin --prune</span><br><span class="line">git fetch origin --prune    git branch -a</span><br></pre></td></tr></table></figure><h2 id="切换本地分支（若分支在本地未与orgin同步）："><a href="#切换本地分支（若分支在本地未与orgin同步）：" class="headerlink" title="切换本地分支（若分支在本地未与orgin同步）："></a>切换本地分支（若分支在本地未与orgin同步）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b [branch name]</span><br></pre></td></tr></table></figure><h2 id="删除远程分支："><a href="#删除远程分支：" class="headerlink" title="删除远程分支："></a>删除远程分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete [branch name]</span><br></pre></td></tr></table></figure><h2 id="删除本地分支（dev分支）："><a href="#删除本地分支（dev分支）：" class="headerlink" title="删除本地分支（dev分支）："></a>删除本地分支（dev分支）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D dev</span><br></pre></td></tr></table></figure><h2 id="拉取代码（拉取指定分支）："><a href="#拉取代码（拉取指定分支）：" class="headerlink" title="拉取代码（拉取指定分支）："></a>拉取代码（拉取指定分支）：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure><h2 id="拉取代码（与当前分支合并）"><a href="#拉取代码（与当前分支合并）" class="headerlink" title="拉取代码（与当前分支合并）:"></a>拉取代码（与当前分支合并）:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;</span><br></pre></td></tr></table></figure><h2 id="手动合并（打开merge工具）-："><a href="#手动合并（打开merge工具）-：" class="headerlink" title="手动合并（打开merge工具）  ："></a>手动合并（打开merge工具）  ：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge tool </span><br><span class="line"><span class="meta">#</span><span class="bash"> 打开beyondcompare后左边是当前分支代码，中间是修改前的代码，右边是被合并分支的代码，点击左边箭头进行选择并合并</span></span><br></pre></td></tr></table></figure><p><img src="/2020/05/08/tool_operation/git/clipboard.png" alt="img"></p><h2 id="删除远端文件或文件夹（保留本地文件）"><a href="#删除远端文件或文件夹（保留本地文件）" class="headerlink" title="删除远端文件或文件夹（保留本地文件）:"></a>删除远端文件或文件夹（保留本地文件）:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache filename</span><br><span class="line">git rm -r --cache dirname</span><br></pre></td></tr></table></figure><h2 id="创建和删除标签："><a href="#创建和删除标签：" class="headerlink" title="创建和删除标签："></a>创建和删除标签：</h2><h3 id="创建："><a href="#创建：" class="headerlink" title="创建："></a>创建：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;标签名&gt;</span><br><span class="line"></span><br><span class="line">git push origin &lt;标签名&gt;</span><br></pre></td></tr></table></figure><h3 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;标签名&gt;</span><br><span class="line">git push origin :refs/tags/标签名</span><br></pre></td></tr></table></figure><h2 id="将tag检出的办法："><a href="#将tag检出的办法：" class="headerlink" title="将tag检出的办法："></a>将tag检出的办法：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;new branch&gt; &lt;tag name&gt;</span><br></pre></td></tr></table></figure><h2 id="迁移仓库（从github到gitee"><a href="#迁移仓库（从github到gitee" class="headerlink" title="迁移仓库（从github到gitee)"></a>迁移仓库（从github到gitee)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote remove origin</span><br><span class="line">git remote add origin https://gitee/com/Ztt./homework.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具操作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具操作 </tag>
+            
+            <tag> 版本管理 </tag>
             
         </tags>
       
